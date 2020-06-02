@@ -1,6 +1,6 @@
 # Backend da aplicação de recoleta (NLW)
 
-<img src="images/throw_away.svg" style="zoom:50%;" />
+<img src="images/throw_away.svg" width="256px" height="256px"/>
 
 <div style="{display: flex;}">
 	<img src="images/node-js.svg" width="64px" height="64px"/>

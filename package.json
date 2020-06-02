@@ -33,6 +33,7 @@
     "dev": "npx ts-node-dev src/server.ts",
     "test": "jest --passWithNoTests --watch",
     "test:staged": "jest --passWithNoTests",
-    "migrate": "knex migrate:latest --knexfile knexfile.ts migrate:latest"
+    "migrate": "knex --knexfile knexfile.ts migrate:latest",
+    "seed": "knex --knexfile knexfile.ts seed:run"
   }
 }

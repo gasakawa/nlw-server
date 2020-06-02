@@ -30,7 +30,7 @@
     "typescript": "^3.9.3"
   },
   "scripts": {
-    "dev": "npx ts-node-dev src/server.ts",
+    "dev": "ts-node-dev --transpileOnly --ignore-watch node_modules src/server.ts",
     "test": "jest --passWithNoTests --watch",
     "test:staged": "jest --passWithNoTests",
     "migrate": "knex --knexfile knexfile.ts migrate:latest",

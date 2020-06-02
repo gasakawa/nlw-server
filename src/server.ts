@@ -1,11 +1,13 @@
 import express from 'express';
-import routes from './routes/routes';
 import path from 'path';
-import bodyParser from 'body-parser';
+import cors from 'cors';
+
+import routes from './routes/routes';
 
 const app = express();
 
-app.use(bodyParser.json());
+app.use(cors());
+app.use(express.json());
 app.use(routes);
 
 app.use('/uploads', express.static(path.resolve(__dirname, '..', 'uploads')));

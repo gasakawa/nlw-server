@@ -7,6 +7,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "knex": "^0.21.1",
+    "multer": "^1.4.2",
     "sqlite3": "^4.2.0"
   },
   "devDependencies": {
@@ -14,6 +15,7 @@
     "@types/express": "^4.17.6",
     "@types/jest": "^25.2.3",
     "@types/knex": "^0.16.1",
+    "@types/multer": "^1.4.3",
     "@types/node": "^14.0.6",
     "@typescript-eslint/eslint-plugin": "^3.0.2",
     "eslint": "^7.1.0",

@@ -15,18 +15,20 @@ export default class PointsController {
         lng,
         city,
         uf,
-        image:
-          'https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60',
+        image: req.file.filename,
       };
 
       const [insertedId] = await trx('points').insert(point);
 
-      const pointItems = items.map((itemId: number) => {
-        return {
-          item_id: itemId,
-          point_id: insertedId,
-        };
-      });
+      const pointItems = items
+        .split(',')
+        .map((item: string) => Number(item.trim()))
+        .map((itemId: number) => {
+          return {
+            item_id: itemId,
+            point_id: insertedId,
+          };
+        });
 
       await trx('point_items').insert(pointItems);
 
@@ -56,8 +58,13 @@ export default class PointsController {
       .where('point_items.point_id', id)
       .select('items.title');
 
+    const serializedPoint = {
+      ...point,
+      imageURL: `http://192.168.1.108:3333/uploads/${point.image}`,
+    };
+
     return res.json({
-      point,
+      point: serializedPoint,
       items,
     });
   }
@@ -77,6 +84,13 @@ export default class PointsController {
       .distinct()
       .select('points.*');
 
-    return res.json(points);
+    const serializedPoints = points.map(point => {
+      return {
+        ...point,
+        imageURL: `http://192.168.1.108:3333/uploads/${point.image}`,
+      };
+    });
+
+    return res.json(serializedPoints);
   }
 }

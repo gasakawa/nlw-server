@@ -1,11 +1,33 @@
-# Backend da aplicação de recoleta (NLW)
+# Backend da aplicação de ecoleta (NLW)
 
-<img src="images/throw_away.svg" width="256px" height="256px"/>
+<img src="images/throw_away.svg" width="256px" height="256px" style="align: center"/>
 
-<div style="{display: flex;}">
-	<img src="images/node-js.svg" width="64px" height="64px"/>
-	<img src="images/react.svg" width="64px" height="64px"/>
-	<img src="images/react-native.svg" width="64px" height="64px"/>
-</div>
 
-API inicial seguindo o workshop da [Rocketseat](https://rocketseat.com.br/), na semana **Next Level Week.**
+API inicial seguindo o workshop da [Rocketseat](https://rocketseat.com.br/), na semana **Next Level Week.**, 
+
+## Instruções
+
+Clonar o projeto
+
+```bash
+git clone https://github.com/gasakawa/nlw-server.git
+```
+
+Instalar dependências
+
+```bash
+cd nlw-server
+yarn
+```
+
+Executar o projeto para desenvolvimento. (isto deve subir seu servidor na porta 3333, reiniciando toda vez que uma alteração seja feita no código).
+
+```
+yarn dev
+```
+
+
+
+## Stack utilizada
+
+Este projeto foi desenvolvido utilizando [**Node JS**](https://nodejs.org/en/)
